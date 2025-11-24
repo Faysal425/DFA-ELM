@@ -1,0 +1,81 @@
+# Synthetic Noise Parameters (Manuscript Section III.J)
+# These replicate physiological artifacts for controlled evaluation
+# Amplitudes are in microvolts (µV)
+
+EOG:
+  type: "gaussian_blinks"
+  amplitude_std: 0.5        # microvolts
+  frequency_range: [0.5, 2.0]  # Hz (blink rate)
+  duration: 0.2             # seconds per blink
+  waveform: "gaussian"
+  seed: 12345
+  description: "Simulates eye blinks and movements"
+
+EMG:
+  type: "high_frequency_bursts"
+  amplitude_std: 0.8
+  frequency_range: [20, 100]  # Hz
+  burst_duration: [0.1, 0.5]  # seconds
+  burst_probability: 0.3
+  seed: 23456
+  description: "Simulates muscle activity"
+
+ECG:
+  type: "r_peak_waveform"
+  amplitude_std: 0.6
+  heart_rate: 72            # bpm
+  frequency: 1.2            # Hz (72/60)
+  qrs_duration: 0.08        # seconds
+  seed: 34567
+  description: "Simulates cardiac interference"
+
+RESPIRATORY:
+  type: "sinusoidal_wave"
+  amplitude_std: 0.4
+  frequency_range: [0.2, 0.4]  # Hz (12-24 breaths/min)
+  waveform: "sine"
+  seed: 45678
+  description: "Simulates breathing artifacts"
+
+POWERLINE:
+  type: "sinusoidal_50hz"
+  amplitude_std: 0.3
+  frequency: 50.0           # Hz (or 60 for US)
+  harmonics: [50, 100, 150] # Include harmonics
+  seed: 56789
+  description: "Simulates electrical interference"
+
+COMBINED:
+  types: ["EOG", "EMG", "ECG", "RESPIRATORY", "POWERLINE"]
+  mixing_method: "additive"
+  snr_target: 3.0          # dB (worst-case scenario)
+  seed: 67890
+  description: "All artifacts simultaneously (Table I)"
+
+# Legacy profiles (for backward compatibility)
+eog:
+  amplitude_range: [5.0, 15.0]  # Eye movement amplitude range
+  blink_rate: 0.02              # Blinks per second
+  frequency_range: [0.1, 0.5]   # Slow eye movements
+
+emg:
+  amplitude_range: [2.0, 8.0]   # Muscle activity amplitude
+  frequency_range: [20, 100]    # High frequency content
+
+ecg:
+  amplitude_range: [1.0, 5.0]   # Cardiac artifact amplitude
+  heart_rate_range: [60, 100]   # BPM
+
+respiratory:
+  amplitude_range: [0.5, 2.0]   # Respiratory artifact amplitude
+  frequency_range: [0.2, 0.5]   # Breathing rate
+
+powerline:
+  amplitude_range: [0.1, 0.5]   # 50/60 Hz interference amplitude
+  frequency: 50                 # Fundamental frequency (Hz)
+  harmonics: 3                  # Number of harmonics to include
+
+# Global settings
+global:
+  snr_target_db: 15             # Default target SNR
+  seed_offset: 1000             # Base seed for reproducibility

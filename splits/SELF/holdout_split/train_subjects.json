@@ -1,0 +1,18 @@
+{
+  "subjects": [
+    "subject_05", "subject_06", "subject_07", "subject_08", "subject_09",
+    "subject_10", "subject_11", "subject_12", "subject_13", "subject_14",
+    "subject_15", "subject_16", "subject_17", "subject_18", "subject_19",
+    "subject_20", "subject_21", "subject_22", "subject_23", "subject_24",
+    "subject_25", "subject_26", "subject_27", "subject_28", "subject_29",
+    "subject_30", "subject_31", "subject_32", "subject_33", "subject_34",
+    "subject_35", "subject_36"
+  ],
+  "split_type": "holdout",
+  "split_ratio": [0.8, 0.1, 0.1],
+  "seed": 42,
+  "stratified": true,
+  "total": 32,
+  "good_counters": 14,
+  "bad_counters": 18
+}

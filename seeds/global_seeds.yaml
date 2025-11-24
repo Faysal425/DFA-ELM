@@ -1,0 +1,12 @@
+# Global seed configuration for reproducibility
+# All random number generators are set to these values
+
+python: 1337
+numpy: 1337
+torch: 1337
+torch_deterministic: true
+cudnn_benchmark: false
+
+# Additional reproducibility settings
+random_state: 1337
+seed_offset: 1000

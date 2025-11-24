@@ -1,0 +1,15 @@
+{
+  "subjects": [
+    "subject_01", "subject_02", "subject_03", "subject_04", "subject_05"
+  ],
+  "usage_notes": {
+    "reconstruction_clean": "NOT USED - prevent memorization",
+    "reconstruction_noisy": "NOT USED - prevent memorization",
+    "classification": "Final testing only after reconstruction"
+  },
+  "split_type": "holdout",
+  "split_ratio": [0.8, 0.1, 0.1],
+  "seed": 42,
+  "stratified": true,
+  "total": 5
+}

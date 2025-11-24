@@ -1,0 +1,15 @@
+{
+  "subjects": [
+    "subject_34", "subject_35", "subject_36"
+  ],
+  "usage_notes": {
+    "reconstruction_clean": "Validate autoencoder training",
+    "reconstruction_noisy": "Validate autoencoder retraining",
+    "classification": "Validate MR-ELM during training"
+  },
+  "split_type": "holdout",
+  "split_ratio": [0.8, 0.1, 0.1],
+  "seed": 42,
+  "stratified": true,
+  "total": 3
+}

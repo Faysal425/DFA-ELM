@@ -1,0 +1,7 @@
+{
+  "eog": 5001,
+  "emg": 5002,
+  "ecg": 5003,
+  "respiratory": 5004,
+  "powerline": 5050
+}

@@ -1,0 +1,12 @@
+{
+  "subjects": [
+    "subject_37", "subject_38", "subject_39", "subject_40"
+  ],
+  "split_type": "holdout",
+  "split_ratio": [0.8, 0.1, 0.1],
+  "seed": 42,
+  "stratified": true,
+  "total": 4,
+  "good_counters": 2,
+  "bad_counters": 2
+}

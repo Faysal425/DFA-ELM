@@ -1,0 +1,34 @@
+# Configuration for model evaluation
+
+model:
+  # For reconstruction evaluation
+  input_channels: 23
+  input_length: 2500
+  base_channels: 64
+  latent_dim: 128
+  num_heads: 8
+  checkpoint_path: "../weights/reconstruction/mat_s9_best.pth"
+
+  # For classification evaluation
+  input_size: 28
+  num_classes: 2
+  elm_hidden_size: 512
+  # checkpoint_path: "../weights/classification/mat_recon_s7_best.ckpt"
+
+data:
+  # Reconstruction data
+  clean_test_path: "../data/processed/mat/clean"
+  noisy_test_path: "../data/processed/mat/noisy"
+
+  # Classification data
+  features_test_path: "../data/features/raw_features"
+  labels_test_path: "../data/features/labels"
+
+evaluation:
+  batch_size: 16
+  num_workers: 4
+
+output:
+  results_dir: "../results/evaluation"
+  plots_dir: "../results/plots"
+  generate_plots: true
