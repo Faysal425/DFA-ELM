@@ -209,8 +209,8 @@ python scripts/noise/validate_synthetic_noise.py \
 | Model | Download Link |
 |-------|---------------|
 | Reconstruction Model | [Google Drive](https://drive.google.com/file/d/1WV58LaWgiK9SDESm4XzEb8bb19mAcqyg/view?usp=sharing) |
-| Classification Model — Phase 1 | [Google Drive](https://drive.google.com/file/d/1LHNBmHKEwRKyJMG9Dpk4cO_CzC2jhjyX/view?usp=sharing) |
-| Classification Model — Phase 2 | [Google Drive](https://drive.google.com/file/d/1fo5EW9bPmlZooYEM-_9vQKatBMwwbTqQ/view?usp=sharing) |
+| Classification Model — Phase 1 | [Google Drive](https://drive.google.com/file/d/1YJPN9X8cVjNHgmmogh__dR1yvcIIJJUA/view?usp=sharing) |
+| Classification Model — Phase 2 | [Google Drive](https://drive.google.com/file/d/17pAmiXiyvFjuKyi436wZEO8LsMfC5Xsx/view?usp=sharing) |
 
 ---
 
