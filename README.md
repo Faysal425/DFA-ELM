@@ -205,16 +205,22 @@ python scripts/noise/validate_synthetic_noise.py \
 
 ## 📦 Pre-trained Model Weights
 
-### Download Links
+### **MAT Dataset**
+| Model | Download Link |
+|-------|---------------|
+| Reconstruction Model | [Google Drive](https://drive.google.com/file/d/1WV58LaWgiK9SDESm4XzEb8bb19mAcqyg/view?usp=sharing) |
+| Classification Model — Phase 1 | [Google Drive](https://drive.google.com/file/d/1LHNBmHKEwRKyJMG9Dpk4cO_CzC2jhjyX/view?usp=sharing) |
+| Classification Model — Phase 2 | [Google Drive](https://drive.google.com/file/d/1fo5EW9bPmlZooYEM-_9vQKatBMwwbTqQ/view?usp=sharing) |
 
-We provide pre-trained weights for both reconstruction and classification models:
+---
 
-| Model                         | Dataset | Size   | Download Link                                                               |
-| ----------------------------- | ------- | ------ | --------------------------------------------------------------------------- |
-| **Reconstruction (Phase 1b)** | MAT     | 152 MB | [Google Drive](https://drive.google.com/file/d/YOUR_RECONSTRUCTION_MAT_ID)  |
-| **Reconstruction (Phase 1b)** | SELF    | 152 MB | [Google Drive](https://drive.google.com/file/d/YOUR_RECONSTRUCTION_SELF_ID) |
-| **Classification**            | MAT     | 46 MB  | [Google Drive](https://drive.google.com/file/d/YOUR_CLASSIFICATION_MAT_ID)  |
-| **Classification**            | SELF    | 46 MB  | [Google Drive](https://drive.google.com/file/d/YOUR_CLASSIFICATION_SELF_ID) |
+### **SELF Dataset**
+| Model | Download Link |
+|-------|---------------|
+| Reconstruction Model | [Google Drive](https://drive.google.com/file/d/YOUR_RECONSTRUCTION_SELF_ID) |
+| Classification Model — Phase 1 | [Google Drive](https://drive.google.com/file/d/YOUR_CLASSIFICATION_SELF_PHASE1_ID) |
+| Classification Model — Phase 2 | [Google Drive](https://drive.google.com/file/d/YOUR_CLASSIFICATION_SELF_PHASE2_ID) |
+
 
 ### Model Architecture Details
 
@@ -241,32 +247,27 @@ python scripts/train/train_reconstruction.py \
     --phase clean \
     --output_dir checkpoints/reconstruction/phase1a/ \
     --epochs 100 \
-    --batch_size 16 \
+    --batch_size 64 \
     --device cuda
 
 # Monitor training with TensorBoard
 tensorboard --logdir logs/reconstruction/phase1a/
 ```
 
-**Expected Output:**
-- Training time: ~2 hours (RTX 3090)
-- Final validation loss: ~0.018
-- Checkpoint: `checkpoints/reconstruction/phase1a/best_model.ckpt`
-
 #### Phase 1b: Retrain on Noisy Signals
 
 ```bash
-# Retrain on noisy signals (SAME 28 subjects, test excluded)
+# Retrain on noisy signals (test excluded)
 python scripts/train/train_reconstruction.py \
     --config configs/reconstruction_config.yaml \
     --data_dir data/MAT/noisy/ \
     --clean_dir data/MAT/filtered/ \
     --split_file splits/MAT/holdout_split/train_subjects.json \
     --phase noisy \
-    --pretrained checkpoints/reconstruction/phase1a/best_model.ckpt \
+    --pretrained checkpoints/reconstruction/phase1a/best_model.pth \
     --output_dir checkpoints/reconstruction/phase1b/ \
     --epochs 50 \
-    --batch_size 16 \
+    --batch_size 64 \
     --device cuda
 ```
 
@@ -287,11 +288,11 @@ bash scripts/run_reconstruction_training.sh \
 ```bash
 # Apply trained reconstruction model to all subjects (including test)
 python scripts/inference/inference.py \
-    --checkpoint checkpoints/reconstruction/phase1b/best_model.ckpt \
+    --checkpoint checkpoints/reconstruction/phase1b/best_model.pth \
     --input_dir data/MAT/noisy/ \
     --output_dir data/MAT/reconstructed/ \
     --split_file splits/MAT/holdout_split/test_subjects.json \
-    --batch_size 32 \
+    --batch_size 64 \
     --device cuda
 ```
 
@@ -306,22 +307,17 @@ python scripts/train/train_classification.py \
     --split_file splits/MAT/holdout_split/train_subjects.json \
     --output_dir checkpoints/classification/ \
     --epochs 50 \
-    --batch_size 32 \
+    --batch_size 64 \
     --device cuda
 
 # Fit ELM head (analytical solution)
 python scripts/train/fit_elm_head.py \
-    --checkpoint checkpoints/classification/best_encoder.ckpt \
+    --checkpoint checkpoints/classification/best_encoder.pth \
     --data_dir data/MAT/reconstructed/ \
     --split_file splits/MAT/holdout_split/train_subjects.json \
-    --output checkpoints/classification/final_model.ckpt \
+    --output checkpoints/classification/final_model.pth \
     --alpha 0.001
 ```
-
-**Expected Output:**
-- Training time: ~1 hour (RTX 3090)
-- Validation accuracy: ~96%
-- Checkpoint: `checkpoints/classification/final_model.ckpt`
 
 **Automated Classification Training:**
 ```bash
@@ -336,9 +332,9 @@ bash scripts/run_classification_training.sh \
 ## 📈 Evaluation
 
 ```bash
-# Evaluate on test subjects (5 subjects, never seen during training/reconstruction)
+# Evaluate on test subjects (never seen during training/reconstruction)
 python scripts/evaluate/evaluate_model.py \
-    --checkpoint checkpoints/classification/final_model.ckpt \
+    --checkpoint checkpoints/classification/final_model.pth \
     --data_dir data/MAT/reconstructed/ \
     --split_file splits/MAT/holdout_split/test_subjects.json \
     --output_dir results/MAT/holdout_test/ \
@@ -386,7 +382,7 @@ python scripts/eval/nested_crossval.py \
 
 ## 📖 Citation
 
-If you use this code or dataset in your research, please cite:
+If you use this code or dataset in your research, please cite (TBA):
 
 ```bibtex
 @article{dfaelm2024,
@@ -395,7 +391,7 @@ If you use this code or dataset in your research, please cite:
   journal={[Journal Name]},
   year={2024},
   doi={[DOI]},
-  url={https://github.com/Faysal425/Denoising_EEG_Signal/}
+  url={}
 }
 ```
 ---
