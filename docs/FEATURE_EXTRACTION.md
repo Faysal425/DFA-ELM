@@ -1,4 +1,4 @@
-# 680 Features for Classification (Manuscript Section III.L)
+# 680 Features for Classification
 
 ## Overview
 
@@ -91,6 +91,3 @@ After extraction of ~2400+ features, dimensionality reduction is performed to se
 
 See `scripts/preprocess/feature_extract.py` for the complete implementation.
 
-## References
-
-Manuscript Section III.L - Preprocessing of Reconstructed EEG
