@@ -7,13 +7,11 @@ This directory should contain the EEG datasets used for training and evaluation.
 - **Subjects**: 36 subjects × 23 channels × 500 Hz
 - **Conditions**: Rest vs. Workload
 - **Files**: Place `.edf` or `.EDF` files in `data/MAT/`
-- **Download**: [Link to dataset source]
 
 ## Self-Collected Dataset
 - **Subjects**: 40 subjects × 16 channels × 200 Hz
 - **Conditions**: Rest vs. Workload (realistic scenarios)
 - **Files**: Place `.edf` or `.EDF` files in `data/SELF_COLLECTED/`
-- **Ethics**: Approved by institutional review board
 
 ## Preprocessing Output
 After running preprocessing scripts, this directory will contain:
