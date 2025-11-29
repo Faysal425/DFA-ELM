@@ -169,6 +169,5 @@ if __name__ == '__main__':
     a2 = np.random.randn(5)
     b2 = torch.randn(5)
 
-    print("Reproducibility check:")
     print("NumPy arrays match:", np.allclose(a, a2))
     print("PyTorch tensors match:", torch.allclose(b, b2))
