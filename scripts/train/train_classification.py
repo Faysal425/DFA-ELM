@@ -2,7 +2,7 @@
 """
 Train DFA-ELM classification model for cognitive workload assessment.
 
-This script trains the complete DFA-ELM pipeline: CNN feature extraction,
+This script trains the complete DFA-ELM pipeline: feature extraction,
 attention mechanisms, and ELM classification.
 
 Usage:
