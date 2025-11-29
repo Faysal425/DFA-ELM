@@ -4,9 +4,6 @@
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch 2.4](https://img.shields.io/badge/PyTorch-2.4-ee4c2c.svg)](https://pytorch.org/)
 
-**Official Implementation** of the paper:  
-*"An Adaptive Denoising-Driven EEG Signal Fusion Framework for Cognitive Load Monitoring in Real-World Human-Machine Environments"*
-
 > 📄 **Paper:** [IEEE Transactions on Neural Networks and Learning Systems](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5962385)  [Under Review]
 
 > 📊 **Self Collected Dataset:** [https://doi.org/10.6084/m9.figshare.29528219.v3](https://doi.org/10.6084/m9.figshare.29528219.v3)  
@@ -208,9 +205,10 @@ python scripts/noise/validate_synthetic_noise.py \
 ### **MAT Dataset**
 | Model | Download Link |
 |-------|---------------|
-| Reconstruction Model | [Google Drive](https://drive.google.com/file/d/1WV58LaWgiK9SDESm4XzEb8bb19mAcqyg/view?usp=sharing) |
-| Classification Model — Phase 1 | [Google Drive](https://drive.google.com/file/d/1YJPN9X8cVjNHgmmogh__dR1yvcIIJJUA/view?usp=sharing) |
-| Classification Model — Phase 2 | [Google Drive](https://drive.google.com/file/d/17pAmiXiyvFjuKyi436wZEO8LsMfC5Xsx/view?usp=sharing) |
+| Reconstruction Model | [Google Drive](https://drive.google.com/drive/folders/1MJ95l5tRlUICva0Kfsv_LFb9dVxKcJlp?usp=sharing) |
+| Classification Model — Phase 1 | [Google Drive](https://drive.google.com/drive/folders/1Pn9uWIWOF6QL3TpmAOEZmsObb_-HQLHj?usp=sharing) |
+| Classification Model — Phase 2 | 
+[Google Drive](https://drive.google.com/drive/folders/1ylEEdgElw-1BiEXDkRsE6r9ZPjod3oCg?usp=sharing) |
 
 ---
 
@@ -326,7 +324,6 @@ bash scripts/run_classification_training.sh \
     --config configs/classification_config.yaml \
     --device cuda
 ```
-
 ---
 
 ## 📈 Evaluation
@@ -362,8 +359,6 @@ python scripts/eval/nested_crossval.py \
     --device cuda
 ```
 
-
-
 ## 💻 Hardware Requirements
 ### Recommended (Training)
 - **CPU:** Intel Core i7-1165G7 (4 cores / 8 threads @ 2.8 GHz)
@@ -376,9 +371,6 @@ python scripts/eval/nested_crossval.py \
 - **CUDA:** CUDA 11.3 / 11.8 (PyTorch-compatible)
 - **Drivers:** Latest NVIDIA GPU drivers for Windows or Linux
 ---
-
-
-
 
 ## 📖 Citation
 
@@ -397,11 +389,8 @@ If you use this code or dataset in your research, please cite (TBA):
 ---
 
 ## 📜 License
-
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ---
-
 
 ## 🔗 Related Resources
 
