@@ -2,11 +2,11 @@
 
 ## Nested Cross-Validation Protocol
 
-### Outer Loop (5 folds)
+### Outer Loop
 - Purpose: Performance estimation
 - Each fold: 20% of subjects held out for testing
 
-### Inner Loop (4 folds on remaining 80%)
+### Inner Loop
 - Purpose: Hyperparameter tuning
 - Used for model selection
 - Best model applied to outer test set
