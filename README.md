@@ -7,7 +7,7 @@
 > 📄 **Paper:** [IEEE Transactions on Neural Networks and Learning Systems](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5962385)  [Under Review]
 
 > 📊 **Self Collected Dataset:** [https://doi.org/10.6084/m9.figshare.29528219.v3](https://doi.org/10.6084/m9.figshare.29528219.v3)  
-> 🎯 **Code:** [https://github.com/Faysal425/Denoising_EEG_Signal/](https://github.com/Faysal425/Denoising_EEG_Signal/)
+> 🎯 **Code:** [https://github.com/Faysal425/DFA-ELM](https://github.com/Faysal425/DFA-ELM)
 
 ---
 
