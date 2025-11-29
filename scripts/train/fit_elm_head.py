@@ -90,7 +90,7 @@ def fit_elm_classifier(features, labels, alpha=0.01, random_state=42):
 
     elm = ELMClassifier(
         input_size=n_features,
-        hidden_size=512,  # Standard ELM hidden size
+        hidden_size=[512, 1024, 256],  # Standard ELM hidden size
         output_size=n_classes,
         alpha=alpha,
         random_state=random_state
