@@ -13,7 +13,7 @@ model:
   input_size: 28
   num_classes: 2
   elm_hidden_size: 512, 1024, 256
-  # checkpoint_path: "../weights/classification/mat_recon_s7_best.ckpt"
+  # checkpoint_path: "../weights/classification/mat_recon_s7_best.pth"
 
 data:
   # Reconstruction data
