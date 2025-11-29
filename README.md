@@ -214,9 +214,9 @@ python scripts/noise/validate_synthetic_noise.py \
 ### **SELF Dataset**
 | Model | Download Link |
 |-------|---------------|
-| Reconstruction Model | [Google Drive](https://drive.google.com/file/d/YOUR_RECONSTRUCTION_SELF_ID) |
-| Classification Model — Phase 1 | [Google Drive](https://drive.google.com/file/d/YOUR_CLASSIFICATION_SELF_PHASE1_ID) |
-| Classification Model — Phase 2 | [Google Drive](https://drive.google.com/file/d/YOUR_CLASSIFICATION_SELF_PHASE2_ID) |
+| Reconstruction Model | [Google Drive](https://drive.google.com/drive/folders/1PRDZstP9ScU-70vYlDjsK_os_x66SJEK?usp=sharing) |
+| Classification Model — Phase 1 | [Google Drive](https://drive.google.com/drive/folders/1Vz00aftK5mpHX8zDaoPg7ZOV0AeRF0nr?usp=sharing) |
+| Classification Model — Phase 2 | [Google Drive](https://drive.google.com/drive/folders/1kGhj6nPEZ_UiBvFhXgGuXmsj_9t-3WUV?usp=sharing) |
 
 
 ### Model Architecture Details
