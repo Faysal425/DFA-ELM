@@ -223,8 +223,8 @@ python scripts/noise/validate_synthetic_noise.py \
 
 | Component | Parameters | FLOPs | Description |
 |-----------|-----------|-------|-------------|
-| **Reconstruction Model** | 2.137M | 9.5M | 3-level encoder-decoder with CA, TA, MHSA, MSFF |
-| **Classification Model** | 0.828M | 2.39M | 2 encoders + MSFF + MR-ELM |
+| **Reconstruction Model** | 0.8285M | 2.3918M | 3-level encoder-decoder with CA, TA, MHSA, MSFF |
+| **Classification Model** | 2.137M | 9.5M | 2 encoders + MSFF + MR-ELM |
 | **Total** | 2.965M | 11.89M | End-to-end pipeline |
 
 ---
