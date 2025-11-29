@@ -386,7 +386,7 @@ If you use this code or dataset in your research, please cite (TBA):
 
 ```bibtex
 @article{dfaelm2024,
-  title={An Adaptive Denoising-Driven EEG Signal Fusion Framework for Cognitive Load Monitoring in Real-World Human-Machine Environments},
+  title={DFA-ELM: Denoising Feature-Aware Extreme Learning Machine},
   author={[Author Names]},
   journal={[Journal Name]},
   year={2024},
